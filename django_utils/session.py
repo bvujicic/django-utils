@@ -42,7 +42,7 @@ class SessionData:
             instance.request.session.modified = True
 
     def __delete__(self, instance):
-        instance.request.session.clear()
+        instance.request.session.pop(self.session_key, None)
         instance.request.session.modified = True
 
     def __repr__(self):
