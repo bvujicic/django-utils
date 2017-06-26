@@ -41,5 +41,9 @@ class SessionData:
         else:
             instance.request.session.modified = True
 
+    def __delete__(self, instance):
+        instance.request.session.pop(self.session_key, None)
+        instance.request.session.modified = True
+
     def __repr__(self):
         return '{cls}({init})'.format(cls=self.__class__.__name__, init=self.session_key)
