@@ -1,6 +1,7 @@
 """
 Various useful decorators.
 """
+
 from django.core.exceptions import FieldDoesNotExist
 
 
