@@ -15,7 +15,7 @@ class SlugMixin:
     is not empty, once set the slug will not change.
     """
     def save(self, *args, **kwargs):
-        slug_field = self._meta.get_field('slug', None)
+        slug_field = self._meta.get_field('slug')
 
         if getattr(slug_field, 'populate_from', None) is None:
             return super().save(*args, **kwargs)
