@@ -13,6 +13,7 @@ def null_slugify(*, value):
     :param value: value to slugify
     :return: slugified value or None
     """
-    new_value = slugify(value)
+    if value is None:
+        return None
 
-    return new_value if new_value else None
+    return slugify(value)
