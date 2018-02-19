@@ -32,7 +32,7 @@ class GenericForeignKeyModel(models.Model):
     Inheritance generic foreign key model.
     Inherit from this if you want your model to have a generic foreign key to any ContentType instance.
     """
-    content_type = models.ForeignKey(ContentType)
+    content_type = models.ForeignKey(ContentType, on_delete=models.PROTECT)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey()
 
